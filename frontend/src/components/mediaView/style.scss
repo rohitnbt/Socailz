@@ -1,0 +1,24 @@
+.media-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    .media-item {
+        width: calc(100% / 3 - 6px);
+        position: relative;
+        img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+        figcaption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}

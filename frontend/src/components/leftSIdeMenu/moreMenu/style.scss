@@ -1,0 +1,15 @@
+.moreMenu {
+    position: absolute;
+    background-color: #ffffff;
+    top: 100px;
+    right: -140px;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 70;
+    box-shadow: 0px 0px 9px #00000050;
+    width: 220px;
+}
+
+ul.sub-menu {
+    margin-left: 20px !important;
+}

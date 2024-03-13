@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "username": "john_doe",
+        "accountType": "gold-verify",
+        "isSeen": "false",
+        "profilePicture": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "location": "New York",
+        "profileBanner": "https://images.pexels.com/photos/4463934/pexels-photo-4463934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "username": "jane_smith",
+        "accountType": "artist",
+        "isSeen": "false",
+        "profilePicture": "https://images.pexels.com/photos/2765557/pexels-photo-2765557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "location": "Los Angeles",
+        "profileBanner": "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id": 3,
+        "name": "Bob Jones",
+        "username": "bob_jones",
+        "accountType": "silver-verify",
+        "isSeen": "false",
+        "profilePicture": "https://images.pexels.com/photos/2531553/pexels-photo-2531553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "location": "Chicago",
+        "profileBanner": "https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+]

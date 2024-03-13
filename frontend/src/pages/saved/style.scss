@@ -1,0 +1,11 @@
+.savdPage {
+    width: 600px;
+    height: 100%;
+    .page-header {
+        a {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.EditProfile {
+    width: 600px;
+    height: 100%;
+    .page-body {
+        .upload-btn {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            input[type="file"] {
+                display: none;
+            }
+            svg {
+                color: #ffffff;
+                height: 50px;
+                width: 50px;
+                padding: 10px;
+                background: #ffffff80;
+                border-radius: 50px;
+            }
+        }
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+                .banner-box {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        aspect-ratio: 3/1;
+                        object-fit: cover;
+                    }
+                }
+
+                .profile-box-outer {
+                    display: flex;
+                    justify-content: space-between;
+                    .profile-box {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        .profile {
+                            position: relative;
+                            img {
+                                height: 100px;
+                                aspect-ratio: 1;
+                                border-radius: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+
+    }
+    .user-details {
+        label {
+            display: block;
+            font-size: 14px;
+            color: var(--gold);
+        }
+        input {
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid var(--gold);
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px 0;
+            outline: none;
+            font-size: 14px;
+        }
+        textarea {
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid var(--gold);
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px 0;
+            outline: none;
+            font-size: 14px;
+            resize: none;
+        }
+    }
+}

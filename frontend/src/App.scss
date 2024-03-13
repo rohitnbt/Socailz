@@ -1,0 +1,25 @@
+.page-title {
+    padding: 20px 0px;
+    a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+            font-size: 19px;
+            color: #000000;
+            font-weight: 600;
+        }
+    }
+
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    h3 {
+        font-size: 19px;
+        font-weight: 600;
+    }
+}

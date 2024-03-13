@@ -1,0 +1,21 @@
+.tabing {
+    margin-bottom: 20px;
+    padding-top: 20px;
+    ul {
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid var(--gray);
+        li{
+            list-style: none;
+            text-align: center;
+            font-size: 14px;
+            padding: 0px 10px 10px;
+            margin-bottom: -1px;
+            &.active{
+                color: var(--gold);
+                border-bottom: 1px solid var(--gold);
+            }
+        }
+    }
+
+}

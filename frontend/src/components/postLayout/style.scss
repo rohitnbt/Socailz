@@ -1,0 +1,121 @@
+.post-layout {
+    margin-top: 30px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .profile-img {
+            width: 50px;
+            aspect-ratio: 1/1;
+            height: 50px;
+            img {
+                aspect-ratio: 1/1;
+                border-radius: 50px;
+                margin: 2px 2px 2px 2px;
+                vertical-align: middle;
+                width: calc(100% - 4px);
+            }
+        }
+        .border {
+            position: relative;
+            border: double 3px transparent;
+            border-radius: 50px;
+            background-image: var(--story);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            display: inline-block;
+            width: 100%;
+            aspect-ratio: 1/1;
+        }
+        .profile {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 5px;
+                a {
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+                    img.icon {
+                        width: 20px;
+                    }
+                }
+
+                h2 {
+                    font-size: 16px;
+                    color: #000;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+                span {
+                    font-size: 13px;
+                    color: #000000;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .body {
+        margin: 20px 0px;
+        img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        video {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .slick-dots {
+            bottom: 10px;
+        }
+
+        .slick-next {
+            right: 20px;
+        }
+
+        .slick-prev {
+            left: 20px;
+            z-index: 1;
+        }
+    }
+    .footer {
+        .control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        ul {
+            display: flex;
+            gap: 20px;
+            li {
+                list-style: none;
+                display: flex;
+                gap: 5px;
+                align-items: center;
+            }
+        }
+        .content {
+            margin: 20px 0px;
+            p {
+                line-height: 18px;
+                font-size: 14px;
+            }
+            .tags {
+                display: flex;
+                gap: 5px 10px;
+                margin: 20px 0;
+                flex-wrap: wrap;
+                span {
+                    color: var(--gold);
+                    font-weight: 700;
+                }
+            }
+        }
+    }  
+}

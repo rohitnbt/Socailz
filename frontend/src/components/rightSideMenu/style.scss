@@ -1,0 +1,30 @@
+.rightSideMenu {
+    width: 350px;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    .rightSideContent {
+        position: fixed;
+        top: 20px;
+        width: 330px;
+        overflow: scroll;
+        height: 100%;
+        .header {
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 10px;
+                width: 100%;
+                justify-content: end;
+                li {
+                    list-style: none;
+                    svg.icon {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

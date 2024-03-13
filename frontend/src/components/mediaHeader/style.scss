@@ -1,0 +1,18 @@
+.media-header {
+    margin: 20px 0;
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .active span {
+            color: var(--gold);
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.MessagesContent {
+    width: 600px;
+    border-right: 1px solid #808080;
+    height: 100%;
+    .profile-img {
+        width: 35px;
+        height: 35px;
+        position: relative;
+        img {
+            width: 100%;
+            object-fit: contain;
+            border-radius: 50px;
+        }
+    }
+    .message-head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        height: 80px;
+        border-bottom: 1px solid #808080;
+        margin-bottom: 10px;
+        span.chat-status {
+            width: 5px;
+            height: 5px;
+            display: inline-block;
+            background-color: green;
+            border-radius: 5px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .chat-profile {
+            display: flex;
+            gap: 10px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+    .message-body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        overflow: scroll;
+        height: calc(100% - 150px);
+        span.chat-date {
+            font-size: 12px;
+            text-align: center;
+        }
+        .chat-received {
+            display: flex;
+            gap: 10px;
+            .content {
+                max-width: 450px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                p {
+                    line-height: 16px;
+                    padding: 10px;
+                    background-color: #f1f1f1;
+                    border-radius: 10px 10px 10px 0;
+                }
+            }
+        }
+        .chat-sent {
+            display: flex;
+            justify-content: end;
+            .content {
+                max-width: 450px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                p {
+                    line-height: 16px;
+                    padding: 10px;
+                    background-color: #ffd400;
+                    border-radius: 10px 10px 0px 10px;
+                }
+                span.time {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .message-foot {
+        padding: 10px;
+    }
+}
