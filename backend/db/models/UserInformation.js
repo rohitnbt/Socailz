@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const userInformationSchema = mongoose.Schema({
-    userId: 
+    name: 
     {    type: String, 
          require: true, 
     },
@@ -10,10 +10,6 @@ const userInformationSchema = mongoose.Schema({
         require: true,
     },
     profilePicture:{
-        type: String,
-        require: true,
-    },
-    name: {
         type: String,
         require: true,
     },

@@ -24,7 +24,17 @@ router.post('/signup', async(request,response)=> {
             email : request.body.email,
             password : hashedPassword,
         };
+        const newUserInfo = {
+            name : request.body.name,
+            profileBanner: "",
+            profilePicture: "",
+            bio: "",
+            location: "",
+            website: "",
+            dob: "",
+        }
         const user = await User.create(newUser)
+        await UserInfo.create(newUserInfo)
         return response.status(201).send(user);
         
     } catch (error) {
@@ -74,7 +84,7 @@ router.post('/login', async(request,response)=> {
 // Upload
 router.post('/upload', async(request,response)=> {
     try {
-        const UserInfo =  await UserInfo.create({profileBanner: request.file.filename})
+        const userInfo =  await UserInfo.create({profileBanner: request.file.filename})
         console.warn(request.file);
         response.status(201).json(UserInfo);
         
