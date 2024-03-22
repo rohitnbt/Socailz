@@ -26,9 +26,9 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', express.static('uploads'));
+app.use(express.static('public'));
 
-app.use('/', upload.single('profileBanner'), UserRoute);
+app.use('/', upload.array('images', 2), UserRoute);
 
 mongoose.connect('mongodb://localhost:27017/Socialz')
 .then(() => {

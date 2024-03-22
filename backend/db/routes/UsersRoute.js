@@ -24,17 +24,18 @@ router.post('/signup', async(request,response)=> {
             email : request.body.email,
             password : hashedPassword,
         };
+        const user = await User.create(newUser);
         const newUserInfo = {
-            name : request.body.name,
+            userId : user._id,
+            name: "",
             profileBanner: "",
             profilePicture: "",
             bio: "",
             location: "",
             website: "",
-            dob: "",
-        }
-        const user = await User.create(newUser)
-        await UserInfo.create(newUserInfo)
+            dob: ""
+        };
+        await UserInfo.create(newUserInfo);
         return response.status(201).send(user);
         
     } catch (error) {
@@ -82,17 +83,28 @@ router.post('/login', async(request,response)=> {
 })
 
 // Upload
-router.post('/upload', async(request,response)=> {
-    try {
-        const userInfo =  await UserInfo.create({profileBanner: request.file.filename})
-        console.warn(request.file);
-        response.status(201).json(UserInfo);
+// router.post('/upload', async(request,response)=> {
+//     try {
+//         const userInfo =  await UserInfo.create({profileBanner: request.file.filename})
+//         console.warn(request.file);
+//         response.status(201).json(UserInfo);
         
+//     } catch (error) {
+//         console.log(error.message);
+//         response.status(500).send({message: error.message})
+//     }
+// })
+
+router.patch('/upload/:userId', async (request,response) => {
+    try {
+        const userId = request.params.userId;
+        const userInfo =  await UserInfo.findOneAndUpdate({ userId: userId } , {profileBanner: request.file.filename, }, { new: true })
+        console.warn(request.file);
+        response.status(201).json(userInfo);
     } catch (error) {
-        console.log(error.message);
-        response.status(500).send({message: error.message})
+        response.status(500).send("wrong id!");
     }
-})
+});
 
 
 export default router;

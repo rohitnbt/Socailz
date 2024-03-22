@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
 const userInformationSchema = mongoose.Schema({
+    userId : {
+        type: Schema.Types.ObjectId,
+    ref: 'User' // Reference to the User collection
+  },
     name: 
     {    type: String, 
          require: true, 
@@ -9,7 +14,7 @@ const userInformationSchema = mongoose.Schema({
         type: String,
         require: true,
     },
-    profilePicture:{
+    profilePicture: {
         type: String,
         require: true,
     },

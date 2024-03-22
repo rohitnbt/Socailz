@@ -15,6 +15,8 @@ import { Login } from './pages/login/Login'
 import { ProtectedRoute } from './components/protectedRoute/ProtectedRoute'
 import { SignUp } from './pages/signup/Signup'
 import { EditProfile } from './pages/editProfile/EditProfile'
+// @material-tailwind/react
+import { ThemeProvider } from "@material-tailwind/react";
 
 function App() {
   register();

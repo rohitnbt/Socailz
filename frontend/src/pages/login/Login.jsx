@@ -7,9 +7,13 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
+import { HideShowPassword } from '../../components/hideShowPassword/HideShowPassword';
+import { MailIcon } from '../../components/Icons/MailIcon';
+import { LockIcon } from '../../components/Icons/LockIcon';
 
 export const Login = () => {
     const [cookieValue, setCookieValue] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -31,7 +35,8 @@ export const Login = () => {
         
         try {
             const response = await axios.post('http://localhost:5555/login', formData);
-            setCookieValue(response.data)
+            const stringifiedCookieData = JSON.stringify(response.data);
+            setCookieValue(stringifiedCookieData)
             // Handle successful login, such as storing token in local storage
             console.warn('Login successful. Token:', cookieValue);
           } catch (error) {
@@ -65,9 +70,14 @@ export const Login = () => {
             <form onSubmit={handleSubmit}>
                 <div className="input-field">
                     <input type="text" placeholder='email' name="email" value={formData.email} onChange={handleInputChange} />
+                    <MailIcon />
                 </div>
                 <div className="input-field">
-                    <input type="password" placeholder='password' name='password' value={formData.password} onChange={handleInputChange} />
+                    <input type={showPassword ? "text" : "password"} value={formData.password} placeholder='password' name='password' value={formData.password} onChange={handleInputChange} />
+                    <div className="show-password" onClick={()=>setShowPassword(!showPassword)}>
+                        <HideShowPassword showPassword={showPassword}/>
+                    </div>
+                    <LockIcon />
                 </div>
                 <div className="input-field">
                     <button type='submit'>Login</button>

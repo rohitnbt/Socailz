@@ -8,17 +8,18 @@ import { MembershipIcon } from "../../Icons/MembershipIcon";
 import { PreciousListIcon } from "../../Icons/PreciousListIcon";
 import { ProfileTrafficIcon } from "../../Icons/ProfileTrafficIcon";
 import { VerificationIcon } from "../../Icons/VerificationIcon";
-import { HomeIcon } from "../../Icons/HomeIcon";
 import { SettingIcon } from "../../Icons/SettingIcon";
 import { SupportIcon } from "../../Icons/SupportIcon";
 import { AppearanceIcon } from "../../Icons/AppearanceIcon";
 import { LogoutIcon } from "../../Icons/LogoutIcon";
+import { LogoutPopup } from "../../logoutPopup/LogoutPopup";
 
 export const MoreMenu = ({setShowMore}) => {
     const location = useLocation();
     const [currentPath, setCurrentPath] = useState('');
     const [showSetting, setShowSetting] = useState(false);
     const [showSupport, setShowSupport] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
 
     useEffect(() => {
         setCurrentPath(location.pathname);
@@ -34,6 +35,7 @@ export const MoreMenu = ({setShowMore}) => {
         setShowSetting(false);
     }
     return (
+    <>
         <div className="moreMenu">
             <ul>
             <li><Link to="/wallet" onClick={()=>setShowMore(false)}><WalletIcon currentPath={currentPath} /><span>Wallet</span></Link></li>
@@ -51,8 +53,10 @@ export const MoreMenu = ({setShowMore}) => {
                 showSupport && <SupportMenu setShowMore={setShowMore} />
             }
             <li><Link to="/appearance" onClick={()=>setShowMore(false)}><AppearanceIcon currentPath={currentPath} /><span>Appearance</span></Link></li>
-            <li><Link to=""><LogoutIcon /><span>Log out</span></Link></li>
+            <li onClick={()=>setOpenModal(!openModal)}><Link to=""><LogoutIcon /><span>Log out</span></Link></li>
             </ul>
         </div>
+        <LogoutPopup openModal={openModal} setOpenModal={setOpenModal} />
+        </>
     )
 }
