@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use('/', upload.array('images', 2), UserRoute);
+app.use('/', upload.fields([{ name: 'profilePicture', maxCount: 1 }, { name: 'bannerImage', maxCount: 1 }]), UserRoute);
 
 mongoose.connect('mongodb://localhost:27017/Socialz')
 .then(() => {

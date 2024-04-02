@@ -17,28 +17,34 @@ import { SignUp } from './pages/signup/Signup'
 import { EditProfile } from './pages/editProfile/EditProfile'
 // @material-tailwind/react
 import { ThemeProvider } from "@material-tailwind/react";
-
+import { useSelector } from 'react-redux'
+import { StoryPreview } from './components/storyPreview/StoryPreview'
 function App() {
   register();
+  const storyPreview = useSelector((state) => state.story.storyPreview)
 
   return (
     <>
     <BrowserRouter>
-      <Wrapper>
-        <LeftSideMenu />
-          <Routes>
-              <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-              <Route path="/saved" element={<ProtectedRoute><Saved /></ProtectedRoute>} />
-              <Route path='/appearance' element={<ProtectedRoute><Appearance /></ProtectedRoute>} />
-              <Route path='/messages' element={<ProtectedRoute><Messages /></ProtectedRoute>} />
-              <Route path='/notification' element={<ProtectedRoute><Notification /></ProtectedRoute>} />
-              <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-              <Route path='/editProfile' element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
-          </Routes>
-        <RightSideMenu />
-      </Wrapper>
+    {
+      storyPreview ? ( <StoryPreview /> ) : (
+        <Wrapper>
+          <LeftSideMenu />
+            <Routes>
+                <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+                <Route path="/saved" element={<ProtectedRoute><Saved /></ProtectedRoute>} />
+                <Route path='/appearance' element={<ProtectedRoute><Appearance /></ProtectedRoute>} />
+                <Route path='/messages' element={<ProtectedRoute><Messages /></ProtectedRoute>} />
+                <Route path='/notification' element={<ProtectedRoute><Notification /></ProtectedRoute>} />
+                <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+                <Route path='/editProfile' element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<SignUp />} />
+            </Routes>
+          <RightSideMenu />
+        </Wrapper>
+        )
+    }
     </BrowserRouter>
     </>
   )

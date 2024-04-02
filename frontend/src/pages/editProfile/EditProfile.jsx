@@ -15,12 +15,6 @@ export const EditProfile = () => {
   const stringifiedCookieData = JSON.parse(userData);
   const formData = new FormData();
 
-  console.warn(stringifiedCookieData);
-
-  useEffect(() => {
-    setProfileBanner("https://demourls.xyz/Pulse-development/img/Maskgroup-new.png");
-  }, []);
-
   const bannerUpload = () => {
     bannerRef.current.click();
   };
@@ -31,15 +25,16 @@ export const EditProfile = () => {
 
   const handleBannerUpload = (e) => {
     const file = e.target.files[0];
-    setProfileBanner(file); // Set profileBanner to the file object
-     // Append the file object to formData
+    setProfileBanner(file);
+    console.warn("profileBanner :"+profileBanner);
     
   };
 
   const handlePictureUpload = (e) => {
     const file = e.target.files[0];
-    setProfilePicture(file); // Set profileBanner to the file object
-     // Append the file object to formData
+    setProfilePicture(file);
+    console.warn("profilePicture :"+profilePicture);
+
     
   };
 
@@ -48,7 +43,7 @@ export const EditProfile = () => {
     console.warn(formData);
     formData.append('profileBanner', profileBanner);
     formData.append('profilePicture', profilePicture);
-    const id = "65f52d060b14a726b8aa66fe";
+    const id = stringifiedCookieData._id;
     const response = await axios.patch(`http://localhost:5555/upload/${id}`, formData);
     setData(response.data);
     console.warn(data);

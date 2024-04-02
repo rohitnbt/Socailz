@@ -9,7 +9,6 @@ export const Home = () => {
   const { data, loading } = useFetch("posts");
   const [currentTab, setCurrentTab] = useState("Home");
   const [tabs, setTabs] = useState([]);
-  console.warn(data);
   useEffect(()=>{
     const tabss = ["Home", "Following", "Favorite", "Artists"];
     setTabs(tabss)

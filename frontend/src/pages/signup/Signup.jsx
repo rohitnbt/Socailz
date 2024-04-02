@@ -40,8 +40,8 @@ export const SignUp = () => {
         {
             try {
                 const response = await axios.post('http://localhost:5555/signup', formData);
-                const stringifiedCookieData = JSON.stringify(response.data);
-                setCookieValue(stringifiedCookieData)
+                setCookieValue(response.data)
+
               } catch (error) {
                 console.warn(error);
               }

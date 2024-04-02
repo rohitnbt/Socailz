@@ -98,7 +98,7 @@ router.post('/login', async(request,response)=> {
 router.patch('/upload/:userId', async (request,response) => {
     try {
         const userId = request.params.userId;
-        const userInfo =  await UserInfo.findOneAndUpdate({ userId: userId } , {profileBanner: request.file.filename, }, { new: true })
+        const userInfo =  await UserInfo.findOneAndUpdate({ userId: userId } , {profilePicture: profilePicture[0].path, profileBanner: bannerImage[0].path }, { new: true })
         console.warn(request.file);
         response.status(201).json(userInfo);
     } catch (error) {

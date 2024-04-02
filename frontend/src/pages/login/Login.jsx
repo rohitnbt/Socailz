@@ -35,10 +35,7 @@ export const Login = () => {
         
         try {
             const response = await axios.post('http://localhost:5555/login', formData);
-            const stringifiedCookieData = JSON.stringify(response.data);
-            setCookieValue(stringifiedCookieData)
-            // Handle successful login, such as storing token in local storage
-            console.warn('Login successful. Token:', cookieValue);
+            setCookieValue(response.data);
           } catch (error) {
             console.warn(error);
           }
@@ -47,6 +44,7 @@ export const Login = () => {
     useEffect(() => {
         if(cookieValue) {
             Cookies.set('UserData', JSON.stringify(cookieValue), { expires: 1 });
+            console.warn("UserData :"+JSON.stringify(cookieValue));
             dispatch(setisAuthenticated(true));
             navigate('/');
         }

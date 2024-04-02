@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.scss"
 import 'swiper/css';
+import { useDispatch } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image1 from '../../images/square/square-1.jpg'
 import Image2 from '../../images/square/square-2.jpg'
@@ -12,10 +13,12 @@ import Image7 from '../../images/square/square-7.jpg'
 import Image8 from '../../images/square/square-8.jpg'
 import Image9 from '../../images/square/square-9.jpg'
 import Image10 from '../../images/square/square-10.jpg'
+import { setStoryPreview } from '../../store/storySlice';
 
 export const StorySlider = () => {
+    const dispatch = useDispatch();
   return (
-    <div className='story-slider'>
+    <div className='story-slider' onClick={()=>dispatch(setStoryPreview(true))}>
         <Swiper
       spaceBetween={10}
       slidesPerView={6}

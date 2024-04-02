@@ -1,4 +1,5 @@
 import React from 'react'
+import Cookies from 'js-cookie';
 import './style.scss'
 
 import {
@@ -12,6 +13,12 @@ import {
 export const LogoutPopup = ({openModal, setOpenModal}) => {
  
     const handleOpen = () => setOpenModal(!openModal);
+
+    const handleLogout = () => {
+      Cookies.remove('UserData');
+      handleOpen();
+      window.location.reload();
+    }
    
     return (
       <>
@@ -29,7 +36,7 @@ export const LogoutPopup = ({openModal, setOpenModal}) => {
             >
               <span>Cancel</span>
             </Button>
-            <Button variant="gradient" color="blue" onClick={handleOpen}>
+            <Button variant="gradient" color="blue" onClick={handleLogout}>
               <span>Confirm</span>
             </Button>
           </DialogFooter>
